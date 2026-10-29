@@ -27,5 +27,5 @@ books = [
 def get_book_by_id(book_id: int) -> Book | None:
     return next((book for book in books if book.id == book_id), None)
 
-def get_all_books() -> list[Book]:
-    return books
+def get_all_books(limit:10) -> list[Book]:
+    return books[:limit]

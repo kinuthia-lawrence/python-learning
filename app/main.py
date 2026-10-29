@@ -15,13 +15,10 @@ def read_health():
 
 
 
-@app.get("/books", response_model=list[Book])
-def read_books():
-    return get_all_books()
 
 @app.get("/books", response_model=list[Book])
 def read_books(limit: int = 10):
-    return get_all_books()[:limit]
+    return get_all_books(limit)
 
 
 @app.get("/books/{book_id}", response_model=Book)
